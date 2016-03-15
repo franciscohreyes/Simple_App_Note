@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Lista de notas{% endblock %}
+
+{% block list_all_note %}
+{% for cat_notas in cat_notas_list %}
+<div class="col s12 m4">
+	<div class="card">
+		<div class="card-content">
+		  <span class="card-title"><a href="#">{{ cat_notas.titulo }}</a> {{ cat_notas.fecha_creacion }}</span>
+		  <p>{{ cat_notas.descripcion }}</p>
+		</div>
+		<div class="card-action">
+		  <a href="{% url "edit_note" cat_notas.pk %}">Editar</a>
+		  <a href="#">Eliminar</a>
+		</div>
+	</div>
+</div>
+	{% empty %}
+	No hay ningun dato para mostrar...
+{% endfor %}
+{% endblock %}

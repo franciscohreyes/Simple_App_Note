@@ -1,0 +1,10 @@
+*.pyc
+*.pot
+*.log
+Simple_Note/settings.py
+*.Simple_Note/wsgi.py
+media
+media/*
+.idea/
+.__pycache__/
+db.sqlite3
