@@ -15,3 +15,14 @@ class CreateNewNoteForm(forms.ModelForm):
 			# 'fecha_creacion': TextInput(attrs={'class': 'datepicker', 'placeholder': '06-02-2016'}),
 		}
 		exclude = ['slug', 'cat_estatus', 'fecha_creacion', 'fecha_edicion']
+
+
+class EditNoteForm(forms.ModelForm):
+
+	class Meta:
+		model = Cat_notas
+		widgets = {
+			'titulo': TextInput(attrs={'class': '', 'placeholder': 'Welcome'}),
+			'descripcion': TextInput(attrs={'class': '', 'placeholder': 'Welcome'}),
+		}
+		exclude = ['slug', 'cat_estatus', 'fecha_creacion', 'fecha_edicion']

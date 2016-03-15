@@ -24,3 +24,17 @@ class CreateNewNoteView(CreateView):
 		context = super(CreateNewNoteView, self).get_context_data(**kwargs)
 		return context
 
+
+class EditNoteView(UpdateView):
+	model = Cat_notas
+	form_class = EditNoteForm
+	success_url = reverse_lazy("index")
+	template_name = "edit_note_form.html"
+
+	def form_valid(self, form):
+		messages.success(self.request, "Haz actualizado la nota correctamente")
+		return super(EditNoteView, self).form_valid(form)
+
+	def get_context_data(self, **kwargs):
+		context = super(EditNoteView, self).get_context_data(**kwargs)
+		return context
